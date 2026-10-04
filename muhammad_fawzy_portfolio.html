@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Fawzy Taha | Electronics & Communications Engineer</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            DEFAULT: '#0a192f',
+                            light: '#112240',
+                            lighter: '#233554'
+                        },
+                        gold: {
+                            DEFAULT: '#d4af37',
+                            light: '#f3e5ab',
+                            hover: 'rgba(212, 175, 55, 0.1)'
+                        },
+                        slate: {
+                            DEFAULT: '#8892b0',
+                            light: '#a8b2d1',
+                            lighter: '#ccd6f6'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Space Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles & Animations */
+        body {
+            background-color: #0a192f;
+            color: #8892b0;
+        }
+        
+        .text-glow {
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a192f;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #233554;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4af37;
+        }
+
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #d4af37;
+            transition: width 0.3s;
+            margin-top: 2px;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="antialiased font-sans leading-relaxed selection:bg-gold selection:text-navy">
+
+    <!-- Navigation -->
+    <header class="fixed w-full top-0 z-50 bg-navy/90 backdrop-blur-sm border-b border-navy-lighter transition-all duration-300" id="navbar">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-gold font-mono font-bold text-xl tracking-wider select-none">MF<span class="text-slate-lighter">.</span></a>
+            
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex gap-8 items-center text-sm font-mono text-slate-lighter">
+                <a href="#about" class="nav-link hover:text-gold transition-colors"><span class="text-gold">01.</span> About</a>
+                <a href="#skills" class="nav-link hover:text-gold transition-colors"><span class="text-gold">02.</span> Skills</a>
+                <a href="#experience" class="nav-link hover:text-gold transition-colors"><span class="text-gold">03.</span> Experience</a>
+                <a href="#projects" class="nav-link hover:text-gold transition-colors"><span class="text-gold">04.</span> Projects</a>
+                <a href="mailto:muhammadfawzyshoaib@gmail.com" class="border border-gold text-gold px-4 py-2 rounded hover:bg-gold-hover transition-colors ml-4">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-gold text-2xl focus:outline-none" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div class="md:hidden hidden bg-navy-light absolute w-full flex-col items-center py-6 shadow-xl border-b border-navy-lighter" id="mobile-menu">
+            <a href="#about" class="py-3 text-slate-lighter hover:text-gold font-mono"><span class="text-gold">01.</span> About</a>
+            <a href="#skills" class="py-3 text-slate-lighter hover:text-gold font-mono"><span class="text-gold">02.</span> Skills</a>
+            <a href="#experience" class="py-3 text-slate-lighter hover:text-gold font-mono"><span class="text-gold">03.</span> Experience</a>
+            <a href="#projects" class="py-3 text-slate-lighter hover:text-gold font-mono"><span class="text-gold">04.</span> Projects</a>
+            <a href="mailto:muhammadfawzyshoaib@gmail.com" class="mt-4 border border-gold text-gold px-6 py-2 rounded hover:bg-gold-hover transition-colors">Contact</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-6 sm:px-12 md:px-24">
+        
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex flex-col justify-center pt-20 pb-10">
+            <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+                <div class="flex-1 w-full">
+                    <p class="text-gold font-mono mb-4 reveal">Hi, my name is</p>
+                    <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold text-slate-lighter mb-4 reveal delay-100">
+                        Muhammad Fawzy.
+                    </h1>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-slate mb-6 reveal delay-200">
+                        I engineer hardware & software solutions.
+                    </h2>
+                    <p class="max-w-xl text-slate text-lg mb-8 reveal delay-300 leading-relaxed">
+                        I'm an Electronics & Communications Engineer specializing in Embedded Systems, Digital/Analog IC Design, and Full-Stack Development. I build everything from bare-metal AVR drivers to modern web applications.
+                    </p>
+                    
+                    <!-- Contact Info / Socials -->
+                    <div class="flex flex-wrap gap-4 items-center reveal delay-400 mb-8">
+                        <a href="mailto:muhammadfawzyshoaib@gmail.com" class="flex items-center gap-2 text-slate-light hover:text-gold transition-colors">
+                            <i class="fas fa-envelope"></i> muhammadfawzyshoaib@gmail.com
+                        </a>
+                        <a href="tel:+201144792280" class="flex items-center gap-2 text-slate-light hover:text-gold transition-colors">
+                            <i class="fas fa-phone"></i> +20 114 479 2280
+                        </a>
+                    </div>
+
+                    <div class="flex gap-6 reveal delay-500">
+                        <a href="https://github.com/MuhammedFawzyShoaib" target="_blank" class="text-slate-light hover:text-gold text-2xl transition-transform hover:-translate-y-1">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/muhammad-shoaib" target="_blank" class="text-slate-light hover:text-gold text-2xl transition-transform hover:-translate-y-1">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Profile Image Representation -->
+                <div class="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 relative reveal delay-300 mx-auto md:mx-0 flex-shrink-0">
+                    <div class="absolute inset-0 rounded-full border-4 border-gold translate-x-4 translate-y-4 transition-transform duration-300 hover:translate-x-2 hover:translate-y-2"></div>
+                    <div class="absolute inset-0 bg-navy-light rounded-full overflow-hidden border border-navy-lighter flex items-center justify-center relative z-10">
+                        <!-- Using a generic placeholder matching the aesthetic, as local images can't be loaded directly without URL -->
+                        <img src="https://placehold.co/400x400/0a192f/d4af37?text=MF" alt="Muhammad Fawzy" class="w-full h-full object-cover mix-blend-screen opacity-80 hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-24 max-w-4xl">
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-lighter mb-8 flex items-center gap-4 reveal">
+                <span class="text-gold font-mono text-xl font-normal">01.</span> About Me
+                <div class="h-[1px] bg-navy-lighter flex-1 ml-4"></div>
+            </h2>
+            
+            <div class="flex flex-col md:flex-row gap-10 text-lg text-slate leading-relaxed reveal">
+                <div class="flex-1 space-y-4">
+                    <p>
+                        Hello! I am Muhammad, a driven undergraduate student at <span class="text-gold">Helwan University</span> (Class of 2027), pursuing a Bachelor of Engineering in Communication & Electronics.
+                    </p>
+                    <p>
+                        My journey bridges the gap between hardware and software. I have a deep passion for <span class="text-slate-lighter">Embedded Systems</span>, <span class="text-slate-lighter">FPGA Design</span>, and <span class="text-slate-lighter">Web Development</span>. I enjoy building things from the ground up, whether that means writing bare-metal C drivers for an AVR microcontroller or developing a full-stack MERN application.
+                    </p>
+                    <p>
+                        Currently, I am actively involved in the <span class="text-gold">IEEE Helwan Student Branch</span> as an instructor and volunteer, sharing my knowledge while continuously honing my own skills through intensive training programs at institutions like ITI and NTI.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-24 max-w-5xl">
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-lighter mb-12 flex items-center gap-4 reveal">
+                <span class="text-gold font-mono text-xl font-normal">02.</span> Technical Skills
+                <div class="h-[1px] bg-navy-lighter flex-1 ml-4"></div>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Skill Category 1 -->
+                <div class="bg-navy-light p-6 rounded-lg border border-navy-lighter hover:-translate-y-2 transition-transform duration-300 reveal shadow-lg shadow-navy-lighter/20">
+                    <div class="text-gold text-3xl mb-4"><i class="fas fa-microchip"></i></div>
+                    <h3 class="text-slate-lighter font-bold text-xl mb-4">Embedded</h3>
+                    <ul class="space-y-2 font-mono text-sm">
+                        <li><span class="text-gold">▹</span> Embedded C / C++</li>
+                        <li><span class="text-gold">▹</span> AVR & ARM Cortex-M</li>
+                        <li><span class="text-gold">▹</span> Embedded Linux</li>
+                        <li><span class="text-gold">▹</span> RTOS</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Category 2 -->
+                <div class="bg-navy-light p-6 rounded-lg border border-navy-lighter hover:-translate-y-2 transition-transform duration-300 reveal delay-100 shadow-lg shadow-navy-lighter/20">
+                    <div class="text-gold text-3xl mb-4"><i class="fas fa-memory"></i></div>
+                    <h3 class="text-slate-lighter font-bold text-xl mb-4">Digital Design</h3>
+                    <ul class="space-y-2 font-mono text-sm">
+                        <li><span class="text-gold">▹</span> FPGA (Xilinx)</li>
+                        <li><span class="text-gold">▹</span> Verilog HDL</li>
+                        <li><span class="text-gold">▹</span> FSM Design</li>
+                        <li><span class="text-gold">▹</span> ModelSim</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Category 3 -->
+                <div class="bg-navy-light p-6 rounded-lg border border-navy-lighter hover:-translate-y-2 transition-transform duration-300 reveal delay-200 shadow-lg shadow-navy-lighter/20">
+                    <div class="text-gold text-3xl mb-4"><i class="fas fa-code"></i></div>
+                    <h3 class="text-slate-lighter font-bold text-xl mb-4">Software</h3>
+                    <ul class="space-y-2 font-mono text-sm">
+                        <li><span class="text-gold">▹</span> C / Python / Bash</li>
+                        <li><span class="text-gold">▹</span> JavaScript (ES6+)</li>
+                        <li><span class="text-gold">▹</span> MATLAB</li>
+                        <li><span class="text-gold">▹</span> Git / GitHub</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Category 4 -->
+                <div class="bg-navy-light p-6 rounded-lg border border-navy-lighter hover:-translate-y-2 transition-transform duration-300 reveal delay-300 shadow-lg shadow-navy-lighter/20">
+                    <div class="text-gold text-3xl mb-4"><i class="fas fa-globe"></i></div>
+                    <h3 class="text-slate-lighter font-bold text-xl mb-4">Web Dev</h3>
+                    <ul class="space-y-2 font-mono text-sm">
+                        <li><span class="text-gold">▹</span> MERN Stack</li>
+                        <li><span class="text-gold">▹</span> React JS / Angular</li>
+                        <li><span class="text-gold">▹</span> Node.js / Express</li>
+                        <li><span class="text-gold">▹</span> PostgreSQL / MongoDB</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-24 max-w-3xl mx-auto">
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-lighter mb-12 flex items-center gap-4 reveal">
+                <span class="text-gold font-mono text-xl font-normal">03.</span> Experience & Leadership
+                <div class="h-[1px] bg-navy-lighter flex-1 ml-4"></div>
+            </h2>
+
+            <div class="relative border-l border-navy-lighter ml-4 md:ml-0 pl-8 space-y-12">
+                <!-- Timeline Item 1 -->
+                <div class="reveal relative">
+                    <div class="absolute w-4 h-4 bg-navy border-2 border-gold rounded-full -left-[40px] top-1"></div>
+                    <h3 class="text-xl font-bold text-slate-lighter">Embedded Systems Instructor & Volunteer</h3>
+                    <h4 class="text-lg text-gold font-mono mb-2">IEEE Helwan Student Branch</h4>
+                    <p class="text-sm text-slate-light mb-4 font-mono">Season 2025</p>
+                    <ul class="space-y-2 text-slate">
+                        <li class="flex items-start gap-2">
+                            <span class="text-gold mt-1">▹</span>
+                            <span>Designed and delivered technical workshops on Embedded Systems and Linux basics for undergraduates.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-gold mt-1">▹</span>
+                            <span>Mentored students in debugging C code, circuit design, and hardware troubleshooting.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-gold mt-1">▹</span>
+                            <span>Managed technical sessions, demonstrating strong leadership and communication skills.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="reveal relative">
+                    <div class="absolute w-4 h-4 bg-navy border-2 border-gold rounded-full -left-[40px] top-1"></div>
+                    <h3 class="text-xl font-bold text-slate-lighter">ComSoc Volunteer</h3>
+                    <h4 class="text-lg text-gold font-mono mb-2">IEEE Communications Society</h4>
+                    <p class="text-sm text-slate-light mb-4 font-mono">Season 2025</p>
+                    <ul class="space-y-2 text-slate">
+                        <li class="flex items-start gap-2">
+                            <span class="text-gold mt-1">▹</span>
+                            <span>Recognized with a Certificate of Achievement for dedicated volunteering and contribution to the branch.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-24 max-w-6xl">
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-lighter mb-12 flex items-center gap-4 reveal">
+                <span class="text-gold font-mono text-xl font-normal">04.</span> Some Things I've Built
+                <div class="h-[1px] bg-navy-lighter flex-1 ml-4"></div>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                
+                <!-- Project 1 -->
+                <div class="bg-navy-light rounded-lg p-6 sm:p-8 flex flex-col justify-between border border-navy-lighter hover:-translate-y-2 transition-transform duration-300 reveal group shadow-xl relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gold transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+                    <div>
+                        <div class="flex justify-between items-center mb-6">
+                            <i class="fas fa-home text-4xl text-gold"></i>
+                            <div class="flex gap-4">
+                                <a href="#" class="text-slate hover:text-gold transition-colors"><i class="fab fa-github text-xl"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-lighter mb-3 group-hover:text-gold transition-colors">Smart Home Automation System</h3>
+                        <p class="text-slate mb-6 text-sm sm:text-base leading-relaxed">
+                            Developed a full smart-home prototype controlling lighting, temperature, and security systems. Architected layered software drivers (MCAL, HAL, APP) from scratch in Embedded C without external libraries.
+                        </p>
+                    </div>
+                    <ul class="flex flex-wrap gap-3 font-mono text-xs text-slate-light">
+                        <li class="px-2 py-1 bg-navy rounded">Embedded C</li>
+                        <li class="px-2 py-1 bg-navy rounded">AVR</li>
+                        <li class="px-2 py-1 bg-navy rounded">UART/SPI/ADC</li>
+                    </ul>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-navy-light rounded-lg p-6 sm:p-8 flex flex-col justify-between border border-navy-lighter hover:-translate-y-2 transition-transform duration-300 reveal group shadow-xl relative overflow-hidden delay-100">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gold transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+                    <div>
+                        <div class="flex justify-between items-center mb-6">
+                            <i class="fas fa-broadcast-tower text-4xl text-gold"></i>
+                            <div class="flex gap-4">
+                                <a href="#" class="text-slate hover:text-gold transition-colors"><i class="fab fa-github text-xl"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-lighter mb-3 group-hover:text-gold transition-colors">Cognitive Radio Prototype</h3>
+                        <p class="text-slate mb-6 text-sm sm:text-base leading-relaxed">
+                            Built a TX/RX prototype utilizing GNU Radio software and SDR hardware. Implemented signal processing blocks in Python to simulate cognitive radio functions and real-time spectrum sensing.
+                        </p>
+                    </div>
+                    <ul class="flex flex-wrap gap-3 font-mono text-xs text-slate-light">
+                        <li class="px-2 py-1 bg-navy rounded">GNU Radio</li>
+                        <li class="px-2 py-1 bg-navy rounded">SDR</li>
+                        <li class="px-2 py-1 bg-navy rounded">Python</li>
+                    </ul>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-navy-light rounded-lg p-6 sm:p-8 flex flex-col justify-between border border-navy-lighter hover:-translate-y-2 transition-transform duration-300 reveal group shadow-xl relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gold transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+                    <div>
+                        <div class="flex justify-between items-center mb-6">
+                            <i class="fas fa-microchip text-4xl text-gold"></i>
+                            <div class="flex gap-4">
+                                <a href="#" class="text-slate hover:text-gold transition-colors"><i class="fab fa-github text-xl"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-lighter mb-3 group-hover:text-gold transition-colors">Logic Ferris Wheel Controller</h3>
+                        <p class="text-slate mb-6 text-sm sm:text-base leading-relaxed">
+                            Designed a Finite State Machine to control a Ferris wheel system. Optimized ASM equations and implemented a verification method in Verilog and ModelSim using the Mealy method.
+                        </p>
+                    </div>
+                    <ul class="flex flex-wrap gap-3 font-mono text-xs text-slate-light">
+                        <li class="px-2 py-1 bg-navy rounded">Verilog HDL</li>
+                        <li class="px-2 py-1 bg-navy rounded">FSM</li>
+                        <li class="px-2 py-1 bg-navy rounded">ModelSim</li>
+                    </ul>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="bg-navy-light rounded-lg p-6 sm:p-8 flex flex-col justify-between border border-navy-lighter hover:-translate-y-2 transition-transform duration-300 reveal group shadow-xl relative overflow-hidden delay-100">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gold transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+                    <div>
+                        <div class="flex justify-between items-center mb-6">
+                            <i class="fas fa-laptop-code text-4xl text-gold"></i>
+                            <div class="flex gap-4">
+                                <a href="#" class="text-slate hover:text-gold transition-colors"><i class="fab fa-github text-xl"></i></a>
+                                <a href="#" class="text-slate hover:text-gold transition-colors"><i class="fas fa-external-link-alt text-xl"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-lighter mb-3 group-hover:text-gold transition-colors">Full-Stack Web Applications</h3>
+                        <p class="text-slate mb-6 text-sm sm:text-base leading-relaxed">
+                            Developed an E-commerce Platform and a Movie Night App with responsive UIs and robust backend architectures. Demonstrated versatility in software engineering by deploying end-to-end full-stack solutions.
+                        </p>
+                    </div>
+                    <ul class="flex flex-wrap gap-3 font-mono text-xs text-slate-light">
+                        <li class="px-2 py-1 bg-navy rounded">React</li>
+                        <li class="px-2 py-1 bg-navy rounded">Node.js</li>
+                        <li class="px-2 py-1 bg-navy rounded">MongoDB</li>
+                        <li class="px-2 py-1 bg-navy rounded">Express</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 border-t border-navy-lighter mt-12 font-mono text-sm text-slate">
+        <p class="mb-2">Designed & Built for Muhammad Fawzy</p>
+        <div class="flex justify-center gap-4 text-slate-light">
+            <a href="https://github.com/MuhammedFawzyShoaib" target="_blank" class="hover:text-gold transition-colors"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/muhammad-shoaib" target="_blank" class="hover:text-gold transition-colors"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+
+    <!-- Interactivity Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // Navbar Scroll Effect
+            const navbar = document.getElementById('navbar');
+            let lastScrollY = window.scrollY;
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('shadow-lg');
+                } else {
+                    navbar.classList.remove('shadow-lg');
+                }
+                lastScrollY = window.scrollY;
+            });
+
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
+                
+                // Change icon
+                const icon = mobileMenuBtn.querySelector('i');
+                if (mobileMenu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                }
+            });
+
+            // Close mobile menu on link click
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                    mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+                    mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+                });
+            });
+
+            // Scroll Reveal Animation via Intersection Observer
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            const revealOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); // Run once
+                    }
+                });
+            }, revealOptions);
+
+            revealElements.forEach(el => {
+                revealOnScroll.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
